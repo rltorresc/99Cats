@@ -1,24 +1,3 @@
-# README
+# 99Cats!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+99cats is a web application that allows users to register and list their cats for rental. With 99cats, users can easily browse through a variety of cats available for rental and request to rent a cat for a specified period of time. Users can also list their own cats for rental to other users. The user-friendly interface makes it easy for users to search for and request the rental of their desired cat. This project was developed while studying at AppAcademy.
