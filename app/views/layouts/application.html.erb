@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cats</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <h1>
+      <a href= "/cats">99Cats</a>
+      </h1>
+      <div> 
+        <% if current_user.nil? %>
+          <a href="/users/new">Sign Up</a>
+          <a href="/sessions/new">Sign In</a>
+        <% else %>
+          <a href= "/users/show"><%= current_user.user_name %></a>
+          <%= link_to 'Sign Out', href="/sessions/destroy", data: {"turbo-method": :delete} %>
+        <% end %>
+      </div>
+    </nav>
+        <% if flash[:alert] %>
+        <h2><%= flash[:alert] %></h2>
+        <% end %>
+        <%= yield %>
+  </body> 
+</html>

@@ -1,0 +1,55 @@
+<main>
+    <section class="page">
+        <div class="centered-box">
+            <img src="https://placekitten.com/g/231/231">
+            <h1><%= @cat.name %></h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Color</th>
+                        <th>Sex</th>
+                        <th>Descriptcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= @cat.name %></td>
+                        <td><%= @cat.age %></td>
+                        <td><%= @cat.color %></td>
+                        <td><%= @cat.sex %></td>
+                        <td><%= @cat.description %></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <a href="<%= edit_cat_url %>"><input class="button2" type ="button" value ="Edit cat" ></a>
+
+            <br><br>
+            <h1>Rental Requests</h1>
+            <% if @cat.rental_requests.empty? %>
+                <p>No rental requests for this cat</p>
+            <% else %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Requester</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @cat.rental_requests.each do |req| %>
+                            <%= render 'rep', req: req %>
+                        <% end %>
+                    </tbody>
+                </table>
+            <% end %>
+            <a href="<%= new_cat_cat_rental_request_url(@cat) %>">
+                Create a rental request
+            </a>
+        </div>
+    </section>
+</main>

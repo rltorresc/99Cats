@@ -1,0 +1,16 @@
+<main>
+    <section class="page">
+        <div class="centered-box"> 
+            <%= form_for @user do |f| %>
+            <h1><%= usertitle %></h1>
+            <label for="user_name">User Name</label>
+            <%= f.text_field :user_name%>
+            <br>
+            <label for="password">Password</label>
+            <%= f.password_field :password%>
+            <br>
+            <%= f.submit "Enviar" %>
+            <%end%>
+        </div>
+    </section>
+</main>

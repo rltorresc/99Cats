@@ -1,0 +1,18 @@
+<main>
+  <section class="cat-index-holder">
+     <nav><h1>My Cats</h1>
+     <a href="<%= new_cat_url %>"><input class="button1" type ="button" value ="Add a cat" ></a>
+     </nav> 
+   <section class="cat-index">
+    <% @cats.each do |cat| %>
+      <div class="cat-index-item">
+        <div>
+          <img src="https://placekitten.com/g/231/231">
+          <br>
+          <a href="<%= cat_url(cat) %>"><%= cat.name %></a>
+        </div>
+      </div>
+    <% end %>
+  </section>
+  </section>
+</main>

@@ -1,0 +1,31 @@
+<main>
+  <section class="page">
+    <div class="centered-box">
+<h1>Create Rental Request</h1>
+
+  <label for="name">Select a cat</label>
+  <%= form_for @rental_request do |f| %>
+      <select name="cat_rental_request[cat_id]"
+              id="cat_rental_request_cat_id"
+              required>
+        <option selected disabled>--Select Cat--</option>
+        <% Cat.all.each do |cat| %>
+          <% selected = @rental_request.cat_id == cat.id %>
+          <option <%= selected ? "selected" : "" %>
+                  value="<%= cat.id %>">
+            <%= cat.name %>
+          </option>
+        <% end %>
+      </select>
+      <br>
+      <label for="start_date">Start Date</label>
+      <%= f.date_field :start_date %>
+      <br>
+      <label for="end_date">End Date</label>
+      <%= f.date_field :end_date %>
+      <br>
+      <%= f.submit "Create Rental Request" %>
+  <%end%>
+    </div>
+  </section>
+</main>

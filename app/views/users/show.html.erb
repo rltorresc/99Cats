@@ -1,0 +1,25 @@
+<main>
+    <section class="page">
+        <div class="centered-box"> 
+            <h1><%=current_user.user_name%></h1>
+            <table>
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            <th>Location</th>
+                            <th>Session</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @sessions.each do |sessions|%>
+                            <tr>
+                                <td><%=sessions.device%></td>
+                                <td><%=@location%></td>
+                                <td><%= button_to "Terminate Session", sessions_path(sessions.id), method: :delete %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+            </table>
+        </div>
+    </section>
+</main>
